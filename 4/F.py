@@ -1,0 +1,1 @@
+print(' '.join(map(str, [i ** 2 for i in reversed(list(map(int, input().split()))) if i > 0])))
