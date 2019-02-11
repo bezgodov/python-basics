@@ -20,9 +20,11 @@ def counter_decorator(decorated_func):
     return helper
 
 def method_decorator(decorated_method):
-    def helper(*xs, **kws):
+    def helper(**kws):
+        print(kws)
         def count(arg, x, y, z):
             coefs = [3, 7, 15, 18]
             return x * coefs[0] - y * coefs[1] + z * coefs[2] + coefs[3]
+        print(xs, kws)
         return decorated_method(xs[0], count(*xs))
     return helper

@@ -4,7 +4,12 @@
 # file_location = script_location / 'input.txt'
 # input_file = file_location.open()
 
-input_file = open('input.txt', "r")
+
+import os
+fld = os.path.dirname(os.path.abspath(__file__))
+input_file = open(os.path.join(fld, 'input.txt'), 'r')
+
+# input_file = open('input.txt', "r")
 
 res = [0] * 10
 
